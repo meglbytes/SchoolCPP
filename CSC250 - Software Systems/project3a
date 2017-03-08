@@ -1,0 +1,21 @@
+#!/bin/bash
+#Matt Meglan
+#Project3a
+#9/28/12
+#Program uses Bash Shell Script to output all the empty in current directory
+
+if [ $# != 0 ]; then
+	echo "Use only: $0"
+	exit 1
+fi
+
+echo "Empty files are:"
+for x in *
+	do 
+	if [ ! -s $x ]; then
+	echo " $x"
+	let "i += 1"
+	fi 
+	done
+echo "Number of empty files: $i"
+exit 0

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if grep -f $1
+	then
+		echo $1 Ordinary file
+	else
+		echo $1 Not an ordinary file
+fi

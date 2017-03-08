@@ -1,0 +1,42 @@
+#!/bin/bash
+#Matt Meglan
+#Project3c
+#9/28/12
+#Version of cp commange that allows users to append the target file if it already exists
+
+if [ $# == 2 ]; then
+	
+	if [ ! -f $1  ]; then
+		echo "Source file must be a regular file (not a directory)"
+		exit 1
+	fi
+
+        if [ -e $2 ]; then
+		if [ ! -f $2  ]; then
+		echo "Destination file must be a regular file (not a directory)"
+		exit 1
+		fi
+	echo "Type '1' for Overwrite, '2' for Append, '3' for Cancel"
+	read x
+		if [ $x -eq 1 ]; then
+			cp $1 $2
+		elif [ $x -eq 2 ]; then
+			cat $2 >> $1 
+		elif [ $x -eq 3 ]; then 
+			exit 0
+		else
+			echo "Not a valid protocol!"
+			exit 1
+		fi
+
+	else
+		cp $1 $2
+	fi
+
+else
+
+	echo "Need to have $0 then source file and destination file"		
+fi
+
+
+exit 0

@@ -1,0 +1,5 @@
+//Matt Meglan
+//Project 5
+
+15 * * * 6,7 date >> meglama-cpp-files ; find ~ -name "*.cpp" >>
+meglama-cpp-files
